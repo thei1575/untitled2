@@ -1,0 +1,10 @@
+[package]
+name = "voxel_core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "voxel_core"
+path = "src/lib.rs"
+

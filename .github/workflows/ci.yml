@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Clippy (deny warnings in game crate)
+        run: cargo clippy --all-targets --all-features -p voxel_game -- -D warnings
+      - name: Build
+        run: cargo build --workspace --release
+      - name: Test
+        run: cargo test --workspace --all-features -- --nocapture
+

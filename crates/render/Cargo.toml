@@ -1,0 +1,14 @@
+[package]
+name = "voxel_render"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "voxel_render"
+path = "src/lib.rs"
+
+[dependencies]
+voxel_core = { path = "../core" }
+voxel_world = { path = "../world" }
+
