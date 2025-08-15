@@ -1,0 +1,15 @@
+[package]
+name = "voxel_world"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "voxel_world"
+path = "src/lib.rs"
+
+[dependencies]
+voxel_core = { path = "../core" }
+noise = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+

@@ -1,0 +1,13 @@
+[package]
+name = "voxel_game"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[dependencies]
+bevy = { version = "0.14", default-features = true }
+voxel_core = { path = "../core" }
+voxel_world = { path = "../world" }
+voxel_render = { path = "../render" }
+
