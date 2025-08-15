@@ -1,4 +1,8 @@
-//! World data structures (chunks, voxels) and generation will live here in later milestones.
+//! World data structures, chunk management, and terrain generation.
 
-// Milestone 1: this crate intentionally has no public API yet.
+pub mod chunk;
+pub mod generation;
+
+pub use chunk::*;
+pub use generation::*;
 

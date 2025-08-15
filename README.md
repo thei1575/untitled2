@@ -1,6 +1,8 @@
 # Voxel Sandbox (Rust + Bevy)
 
-Open-source voxel sandbox game scaffold, built with Rust and Bevy. This repository follows incremental milestones. Milestone 1 provides a compiling workspace and a Bevy window with a camera and light.
+Open-source voxel sandbox game scaffold, built with Rust and Bevy. This repository follows incremental milestones.
+
+**Current Status: Milestone 2** - Core chunk system, block registry, coordinate conversions, and procedural terrain generation with comprehensive tests.
 
 ## Requirements
 - Rust (stable toolchain)
@@ -32,12 +34,34 @@ cargo clippy --all-targets --all-features -p voxel_game -- -D warnings
 - Space to jump, Shift to crouch
 - Left click remove, Right click place
 
+## Features Implemented
+
+### Milestone 1: Project Bootstrap
+- ✅ Cargo workspace with modular crates
+- ✅ Bevy app with 3D window, camera, and lighting
+- ✅ CI/CD pipeline with format, clippy, build, and test
+- ✅ MIT license and documentation
+
+### Milestone 2: Core Chunk & Voxel System
+- ✅ Block registry with palette compression
+- ✅ Chunk data structures (16×16×256 with palette)
+- ✅ Coordinate conversion utilities (world ↔ chunk ↔ local)
+- ✅ Procedural terrain generation with Perlin noise
+- ✅ Comprehensive unit tests for all core systems
+- ✅ ChunkManager for loading/unloading chunks
+
 ## Workspace Layout
-- crates/core: shared types and math
-- crates/world: chunks, generation, save
-- crates/render: meshing and rendering
-- crates/game: Bevy app entry (binary)
-- assets/: runtime assets (currently empty)
+- **crates/core**: Shared types, math, block registry, and palette system
+- **crates/world**: Chunk management and procedural terrain generation
+- **crates/render**: Meshing and rendering (future milestone)
+- **crates/game**: Bevy app entry point (binary)
+- **assets/**: Runtime assets (currently empty)
+
+## Testing
+Run all tests with:
+```bash
+cargo test --workspace --all-features -- --nocapture
+```
 
 ## License
 MIT

@@ -8,3 +8,6 @@ license = "MIT"
 name = "voxel_core"
 path = "src/lib.rs"
 
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+
